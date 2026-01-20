@@ -21,7 +21,7 @@ table_definition(title, ["tconst"-atom, "titleType"-atom, "primaryTitle"-string,
 
 
 read_titles(Table) :-
-	phrase_from_file(parse_csv(Frame, [token_separator('\t')]), 'title-short.tsv'),
+	phrase_from_file(parse_csv(Frame, [token_separator('\t')]), 'title.basics.tsv'),
 	convert_table(title, Frame, Table).
 
 convert_table(TableName, frame(_Header, Lines), Table) :-
