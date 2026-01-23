@@ -2,35 +2,106 @@
 <html>
   <head>
     <title>Socorro Film Society</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style type="text/css">
+
+    img,
+    picture,
+    video {
+      max-width: 100%;
+    }
+
+    body {
+      font: 1.2em / 1.5 serif;
+      margin: 20px;
+      padding: 0;
+      background: #393938;
+      color: #d0d0d0;
+      font-family: "Georgia";
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 2em auto;
+    }
+
+    figure {
+      margin: 0;
+      padding: 0;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+
+    dt::after {
+      content: ":";
+    }
+
+    @media screen and (width >= 600px) {
+      .columned {
+        display: flex;
+      }
+
+      .left {
+        flex: 1;
+        margin-right: 5%;
+      }
+
+      .right {
+        flex: 2;
+      }
+    }
+    
+
+    </style>
   </head>
 
   <body>
-
-    <header>
-      <h1>Socorro Film Society</h1>
-    </header>
-
     <main>
-      <p>Welcome to the Socorro Film Society!</p>
+      <div class="columned">
+        <div class="left">
+          <img src="logo.png" alt="Socorro Film Society">
+          <p>Next showing:</p>
 
-      <p>Our first showing:</p>
+          <figure>
+            <figcaption>
+              Metropolis (<a href="https://www.imdb.com/title/tt0017136/?ref_=fn_t_1">IMDB</a>)
+            </figcaption>
+            <img src="posters/metropolis.png">
 
-      <figure>
-        <figcaption>Metropolis</figcaption>
-        <a href="https://www.imdb.com/title/tt0017136/?ref_=fn_t_1"><img src="posters/metropolis.png"></a>
-      </figure>
+          </figure>
 
-      <dl class="showing-details">
-        <dt>When</dt>
-        <dd><time datetime="2026-02-24 18:00:00-0700">February 24, 2026 @ 6:00 PM</time></dd>
+          <p>See you there!</p>
+        </div>
+
+        <div class="right">
+          <dl class="showing-details">
+            <dt>When</dt>
+            <dd><time datetime="2026-02-24 18:00:00-0700">February 24, 2026 @ 6:00 PM</time></dd>
         
-        <dt>Where</dt>
-        <dd>Loma Theater<br>
-        107 Manzanares Ave<br>
-        Socorro, New Mexico 87801</dd>
-      </dl>
+            <dt>Where</dt>
+            <dd>Loma Theater<br>
+            107 Manzanares Ave<br>
+            Socorro, New Mexico 87801</dd>
+          </dl>
+        </div>
+      </div>
 
-      <p>See you there!
+      <div>
+
+      <h2>About Us</h2>
+
+      <p>Socorro Film Society is a non-profit group based in Socorro, NM. We watch good films and then have informal discussions about them.</p>
+
+      <p>Admission is free, although we suggest a donation of $3 to cover expenses.</p>
+
+      <p>For more information, please reach out to <a href="mailto:fusion@storytotell.org">Daniel Lyons</a>.</p>
+      </div>
     </main>
   </body>
 </html>
