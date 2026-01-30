@@ -24,10 +24,21 @@
 
         # Equivalent to  inputs'.nixpkgs.legacyPackages.hello;
         packages.default = pkgs.hello;
-
-        devShells.default = pkgs.mkShell {
-          packages = with pkgs; [wget scryer-prolog swi-prolog];
-        };
+        
+        devShells.default = let
+            # this is needed because the 0.10.0 version has a bug with HTTP services
+            scryer-prolog-http-patched = pkgs.scryer-prolog.overrideAttrs (attrs: {
+              src = pkgs.fetchFromGitHub {
+                owner = "danilp-id";
+                repo = "scryer-prolog";
+                rev = "337d9c5";
+                sha256 = "sha256-4wE+KMbxIHv+ZeV5YZYFT1Ieqv4usZamwuUukTIDeLA=";
+              };
+            });
+          in
+            pkgs.mkShell {
+              packages = [pkgs.wget pkgs.swi-prolog scryer-prolog-http-patched];
+            };
       };
       flake = {
         # The usual flake attributes can be defined here, including system-
