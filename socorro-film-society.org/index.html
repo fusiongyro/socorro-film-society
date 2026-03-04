@@ -42,6 +42,14 @@
       content: ":";
     }
 
+    a {
+      color: rgb(100,100,255);
+    }
+
+    a:visited {
+      color: rgb(200,100,200);
+    }
+
     @media screen and (width >= 600px) {
       .columned {
         display: flex;
@@ -74,11 +82,10 @@
       <div class="columned">
         <div class="left">
           <figure>
-            <img src="posters/metropolis.png">
+            <img src="posters/casablanca.jpg">
             <figcaption>
-              Metropolis (<a href="https://www.imdb.com/title/tt0017136/?ref_=fn_t_1">IMDB</a>)
+              Casablanca (<a href="https://www.imdb.com/title/tt0034583/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_casablanca">IMDB</a>)
             </figcaption>
-
           </figure>
 
           <p>See you there!</p>
@@ -87,20 +94,22 @@
         <div class="right">
           <dl class="showing-details">
             <dt>When</dt>
-            <dd><time datetime="2026-02-24 18:00:00-0700">February 24, 2026 @ 6:00 PM</time></dd>
+            <dd><time datetime="2026-03-31 18:00:00-0700">March 31, 2026 @ 6:00 PM</time></dd>
         
             <dt>Where</dt>
             <dd>Loma Theater<br>
             107 Manzanares Ave<br>
             Socorro, New Mexico 87801</dd>
+
+            <dt>Poster</dt>
+            <dd><a href="posters/casablanca-film-society-poster.pdf">Download PDF Flyer</a></dd>
           </dl>
         </div>
       </div>
 
       <div>
-      <video id="video" preload="auto" poster="https://kinolorberbucket.s3.amazonaws.com/production/trailers/posters/metropolis_7.jpg" controls style="width:598px;height:450px;">
-        <source src="https://kinolorberbucket.s3.amazonaws.com/production/trailers/c3713425-cd9f-48f7-ac3c-61645c75ac52.mp4" type="video/mp4">
-      </video>
+
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/BkL9l7qovsE?si=rC5J159Eo_oipX37" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
       <h2>About Us</h2>
 
