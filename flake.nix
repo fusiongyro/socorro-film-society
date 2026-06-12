@@ -17,7 +17,10 @@
 
       ];
       systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin" ];
-      perSystem = { config, self', inputs', pkgs, system, ... }: {
+      perSystem = { config, self', inputs', pkgs, system, ... }:
+        let
+          python = pkgs.python314.withPackages(ps: [ps.django ps.psycopg2]);
+        in {
         # Per-system attributes can be defined here. The self' and inputs'
         # module parameters provide easy access to attributes of the same
         # system.
@@ -37,7 +40,7 @@
             });
           in
             pkgs.mkShell {
-              packages = [pkgs.aria2 pkgs.duckdb pkgs.wget pkgs.swi-prolog scryer-prolog-http-patched];
+              packages = [pkgs.aria2 pkgs.duckdb pkgs.wget pkgs.swi-prolog scryer-prolog-http-patched python];
             };
       };
       flake = {
